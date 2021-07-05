@@ -48,10 +48,15 @@ body {
   border-radius: 5px;
   color: #fff;
   cursor: pointer;
+  border: 2px solid #56baed;
   transition: all 0.3s ease;
 }
 .options button:hover {
-  transform: scale(0.9);
+  background: #fff;
+  color: #000;
+}
+.options button:active {
+  transform: translateY(4px);
 }
 .options button.playerX {
   margin-right: 5px;
