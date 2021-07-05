@@ -24,7 +24,12 @@ body {
   border-radius: 5px;
   max-width: 400px;
   width: 100%;
-  display: none;
+  transition: all 0.3s ease;
+}
+.select-box.hide {
+  opacity: 0;
+  pointer-events: none;
+  transform: translate(-50%, -50%) scale(0.9);
 }
 .select-box header {
   font-size: 23px;
@@ -112,7 +117,14 @@ body {
 }
 
 .play-board {
-  display: none;
+  opacity: 0;
+  pointer-events: none;
+  transform: translate(-50%, -50%) scale(0.9);
+}
+.play-board.show {
+  opacity: 1;
+  pointer-events: auto;
+  transform: translate(-50%, -50%) scale(1);
 }
 
 .play-board .play-area {
@@ -140,6 +152,7 @@ body {
   border-radius: 5px;
   max-width: 350px;
   width: 100%;
+  display: none;
 }
 
 .result-box .won-text {
