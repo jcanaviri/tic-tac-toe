@@ -10,7 +10,8 @@ body {
   background-color: #56baed;
 }
 .select-box,
-.play-board {
+.play-board,
+.result-box {
   position: absolute;
   top: 50%;
   left: 50%;
@@ -110,6 +111,10 @@ body {
   z-index: 2;
 }
 
+.play-board {
+  display: none;
+}
+
 .play-board .play-area {
   margin-top: 20px;
 }
@@ -127,4 +132,47 @@ body {
   text-align: center;
   line-height: 80px;
   color: #56baed;
+}
+
+.result-box {
+  background: #fff;
+  padding: 20px;
+  border-radius: 5px;
+  max-width: 350px;
+  width: 100%;
+}
+
+.result-box .won-text {
+  font-size: 25px;
+  font-weight: 500;
+  display: flex;
+  justify-content: center;
+}
+.result-box .won-text p {
+  font-weight: 600;
+  margin: 0 3px;
+}
+.result-box .btn {
+  display: flex;
+  margin-top: 20px;
+  justify-content: center;
+}
+.result-box .btn button {
+  font-size: 18px;
+  font-weight: 500;
+  padding: 8px 20px;
+  border: 2px solid #56baed;
+  outline: none;
+  background: #56baed;
+  border-radius: 5px;
+  color: #fff;
+  cursor: pointer;
+  transition: all 0.3s ease;
+}
+.result-box .btn button:hover {
+  background: #fff;
+  color: #000;
+}
+.result-box .btn button:active {
+  transform: translateY(4px);
 }
