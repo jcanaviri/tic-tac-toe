@@ -6,7 +6,7 @@ const playerBoard = document.querySelector('.play-board');
 const players = document.querySelector('.players');
 const resultBox = document.querySelector('.result-box');
 let wonText = resultBox.querySelector('.won-text');
-const replayBtn = document.querySelector('button');
+const replayBtn = document.querySelector('.btn button');
 
 const allBox = document.querySelectorAll('section span');
 
@@ -14,6 +14,11 @@ let playerXIcon = '<ion-icon name="close-outline"></ion-icon>';
 let playerOIcon = '<ion-icon name="radio-button-off-outline"></ion-icon>';
 let playerSign = 'X';
 let runBot = true;
+
+// Replay the game
+replayBtn.onclick = () => {
+  window.location.reload();
+}
 
 // selecting the winner
 const getClass = (idName) => {
@@ -46,6 +51,27 @@ const selectWinner = () => {
       resultBox.classList.add('show');
     }, 700);
     wonText.innerHTML = `Player <p>${playerSign}</p> won the game!`;
+  } else {
+    // If the match is a draw
+    if (
+      getClass(1) != '' &&
+      getClass(2) != '' &&
+      getClass(3) != '' &&
+      getClass(4) != '' &&
+      getClass(5) != '' &&
+      getClass(6) != '' &&
+      getClass(7) != '' &&
+      getClass(8) != '' &&
+      getClass(9) != ''
+    ) {
+      runBot = false;
+      bot(runBot);
+      setTimeout(() => {
+        playerBoard.classList.remove('show');
+        resultBox.classList.add('show');
+      }, 700);
+      wonText.textContent = `Match has been drawn`;
+    }
   }
 };
 
@@ -115,6 +141,6 @@ window.onload = () => {
   selectOBtn.onclick = () => {
     selectBox.classList.add('hide');
     playerBoard.classList.add('show');
-    playerBoard.setAttribute('class', 'players active player');
+    playerBoard.classList.add('player');
   };
 };
