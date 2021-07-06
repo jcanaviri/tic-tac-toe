@@ -141,6 +141,6 @@ window.onload = () => {
   selectOBtn.onclick = () => {
     selectBox.classList.add('hide');
     playerBoard.classList.add('show');
-    playerBoard.classList.add('player');
+    players.classList.add('player');
   };
 };
